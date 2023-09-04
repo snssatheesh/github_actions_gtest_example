@@ -195,7 +195,7 @@ int actualValue = objUnderTest.Add(input);
 ASSERT_EQ(actualValue, expectedValue);
 }
 
-INSTANTIATE_TEST_SUITE_P
+INSTANTIATE_TEST_CASE_P
 {
 	dummy,string_calculator_add_When_Passed_A_Single_Number,
 	output( make_tuple ("",0),

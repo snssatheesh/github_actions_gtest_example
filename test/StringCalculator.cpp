@@ -116,7 +116,7 @@ ASSERT_EQ(actualValue, expectedValue);
 */
 
                                /* Fixtures */
-
+/*
 class string_calculator_add_When_Passed_A_Single_Number:public::Test {
 protected:
 //Arrange
@@ -170,3 +170,37 @@ int actualValue=objUnderTest.Add(input);
      //Assert - Fatal
 ASSERT_EQ(actualValue, expectedValue);
 }
+*/
+
+
+                           /*parameterized testcase */
+
+class string_calculator_add_When_Passed_A_Single_Number:public::TestWithParam <tuple <string , int>> {
+protected:
+//Arrange
+StringCalculator objUnderTest;
+};
+
+TEST_P(string_calculator_add_When_Passed_A_Single_Number, returns_0_for_empty_string) {
+	//Arrange
+	//StringCalculator objUnderTest;
+	const tuple <string , int> & parameter = GetParam();
+	string input = get<0> (parameter) ;
+	int expectedValue = get<1> (parameter);
+
+	//Act
+int actualValue = objUnderTest.Add(input);
+
+     //Assert - Fatal
+ASSERT_EQ(actualValue, expectedValue);
+}
+
+INSTANTIATE_TEST_SUITE_P
+{
+	dummy,string_calculator_add_When_Passed_A_Single_Number,
+	output( make_tuple ("",0),
+	        make_tuple ("1",1),
+		make_tuple ("1,2",3),
+		make_tuple ("1,2,3,4",10)
+	)
+};

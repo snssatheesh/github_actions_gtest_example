@@ -1,8 +1,6 @@
 add_executable(${PROJECT_NAME}.test
   AllTests.cpp
-StringCalculator.cpp
-testcase1.cpp
-  ${PROJECT_NAME}Test.cpp)
+  StringCalculator.cpp)
 target_link_libraries(${PROJECT_NAME}.test
   ${PROJECT_NAME} gtest pthread)
 target_compile_definitions(${PROJECT_NAME}.test 
@@ -10,3 +8,4 @@ target_compile_definitions(${PROJECT_NAME}.test
 
 install(TARGETS ${PROJECT_NAME}.test
         DESTINATION "${tool_dest}")
+

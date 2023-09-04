@@ -76,11 +76,23 @@ int actualValue=objUnderTest.Add(input);
      //Assert - Fatal
 ASSERT_EQ(actualValue, expectedValue);
 }
-TEST(string_calculator_add_When_Passed_A_Single_Number, returns_1_for_empty_string) {
+TEST(string_calculator_add_When_Passed_A_Single_Number, returns_1_for_single_string) {
 	//Arrange
 	StringCalculator objUnderTest;
 	string input = "1";
 	int expectedValue = 1;
+
+	//Act
+int actualValue=objUnderTest.Add(input);
+
+     //Assert - Fatal
+ASSERT_EQ(actualValue, expectedValue);
+}
+TEST(string_calculator_add_When_Passed_A_Single_Number, returns_3_for_add_string) {
+	//Arrange
+	StringCalculator objUnderTest;
+	string input = "1,2";
+	int expectedValue = 3;
 
 	//Act
 int actualValue=objUnderTest.Add(input);

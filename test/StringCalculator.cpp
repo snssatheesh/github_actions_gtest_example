@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 
 using namespace std;
-
+using namespace testing;
 class StringCalculator {
 public:
 	int Add(const string &input);

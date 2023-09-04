@@ -117,7 +117,7 @@ ASSERT_EQ(actualValue, expectedValue);
 
                                /* Fixtures */
 
-class string_calculator_add_When_Passed_A_Single_Number:public {
+class string_calculator_add_When_Passed_A_Single_Number:public::Test {
 protected:
 //Arrange
 StringCalculator objUnderTest;
